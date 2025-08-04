@@ -6,7 +6,6 @@ export function App() {
     return (
         <Providers>
             <div className="bg-gray-100 min-h-screen flex flex-col">
-                <AppHeader />
                 <Outlet />
             </div>
         </Providers>

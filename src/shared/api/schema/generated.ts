@@ -34,7 +34,7 @@ export interface paths {
             };
         };
         put?: never;
-        /** Create a new board */
+        /** Create a new board, */
         post: {
             parameters: {
                 query?: never;
@@ -178,6 +178,45 @@ export interface paths {
                     };
                 };
                 400: components["responses"]["BadRequestError"];
+            };
+        };
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/auth/refresh": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Refresh access token */
+        post: {
+            parameters: {
+                query?: never;
+                header?: never;
+                path?: never;
+                cookie?: {
+                    refreshToken?: string;
+                };
+            };
+            requestBody?: never;
+            responses: {
+                /** @description Access token refreshed successfully */
+                200: {
+                    headers: {
+                        [name: string]: unknown;
+                    };
+                    content: {
+                        "application/json": components["schemas"]["AuthResponse"];
+                    };
+                };
+                401: components["responses"]["UnauthorizedError"];
             };
         };
         delete?: never;

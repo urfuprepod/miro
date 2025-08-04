@@ -35,7 +35,9 @@ getAllBoards:
       $ref: '../shared/responses.yaml#/UnauthorizedError'
 
 createBoard:
-  summary: Create a new board
+  summary: Create a new board,
+  security:
+    - bearerAuth: []
   requestBody:
     required: true
     content:
@@ -55,6 +57,8 @@ createBoard:
 
 deleteBoard:
   summary: Delete a board
+  security:
+    - bearerAuth: []
   parameters:
     - name: boardId
       in: path
