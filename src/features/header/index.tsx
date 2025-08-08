@@ -5,6 +5,9 @@ import { Button } from "@/shared/ui/kit/button";
 
 export const AppHeader = () => {
     const { session, logout } = useSession();
+
+    if (!session) return null;
+
     return (
         <header className="bg-background border-b border-border/40 shadow-sm py-3 px-4 mb-6">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
